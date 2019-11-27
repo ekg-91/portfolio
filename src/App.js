@@ -3,36 +3,40 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Footer from './components/Footer';
+
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 
 class App extends React.Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       title: 'Elliot Gallagher',
       headerLinks: [
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about' },
-        { title: 'Contact', path: '/contact' },
+        { title: 'Contact', path: '/contact' }
       ],
       home: {
         title: 'Be Inspired',
         subTitle: 'Projects for a bright future',
-        test: 'Check out my projects below'
+        text: 'Check out my projects below'
       },
       about: {
-        title: 'About Me',
+        title: 'About Me'
       },
       contact: {
-        title: 'Get in touch',
-      },
-    }
+        title: 'Get in touch'
+      }
+    };
   }
 
-  render() {
+  render () {
     return (
       <Router>
-        <Container className='p-0' fluid={true}>
+        <Container className='p-0' fluid>
           <Navbar className='border-bottom' bg='transparent' expand='lg'>
             <Navbar.Brand>Elliot Gallagher</Navbar.Brand>
             <Navbar.Toggle aria-controls='navbar-toggle' />
@@ -44,6 +48,11 @@ class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
+
+          <Route path='/' exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} />} />
+          <Route path='/about' render={() => <AboutPage title={this.state.about.title} />} />
+          <Route path='/contact' render={() => <ContactPage title={this.state.contact.title} />} />
+          <Footer />
         </Container>
       </Router>
     );
