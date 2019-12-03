@@ -24,10 +24,10 @@ class Carousel extends React.Component {
         },
         {
           id: 1,
-          title: 'llnnll records',
-          subTitle: 'Record Label and Production Company',
+          title: 'About Me',
+          subTitle: 'A bit more about who I am',
           imgSrc: AthamesLogo,
-          link: 'http://www.athames.com',
+          link: '/about',
           selected: false
         },
         {

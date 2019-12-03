@@ -53,7 +53,7 @@ class ContactPage extends React.Component {
       .catch(err => {
         this.setState({
           disabled: false,
-          emailSent: true
+          emailSent: false
         })
       })
   }
@@ -82,7 +82,7 @@ class ContactPage extends React.Component {
             </Button>
 
             {this.state.emailSent === true && <p className='d-inline success-msg'>Email Sent</p>}
-            {this.state.emailSent === false && <p className='d-inline err-msg'>Email Sent</p>}
+            {this.state.emailSent === false && <p className='d-inline err-msg'>Email NOT Sent</p>}
           </Form>
         </Content>
       </div>
