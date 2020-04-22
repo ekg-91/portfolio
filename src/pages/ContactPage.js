@@ -1,5 +1,5 @@
-import React from 'react';
-import Axios from 'axios';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 import Hero from '../components/Hero';
 import Content from '../components/Content';
@@ -7,87 +7,80 @@ import Content from '../components/Content';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-class ContactPage extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: '',
-      disabled: false,
-      emailSent: null
-    };
-  }
+export default function ContactPage (props) {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    message: '',
+    disabled: false,
+    emailSent: null
+  })
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
-    this.setState({
+    setState({
       [name]: value
     })
   }
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    this.setState({
+    setState({
       disabled: true
     });
 
-    Axios.post('http://localhost:3030/api/email', this.state)
+    axios.post('http://localhost:3030/api/email', state)
       .then(res => {
         if(res.data.success){
-          this.setState({
+          setState({
             disabled: false,
             emailSent: true
           });
         } else {
-          this.setState({
+          setState({
             disabled: false,
             emailSent: false
           });
         }
       })
       .catch(err => {
-        this.setState({
+        setState({
           disabled: false,
           emailSent: false
         })
       })
   }
 
-  render () {
-    return (
-      <div>
-        <Hero title={this.props.title} />
+  return (
+    <div>
+      <Hero title={props.title} />
 
-        <Content>
-          <Form onSubmit={this.handleSubmit}>
-            <Form.Group>
-              <Form.Label htmlFor='full-name'>Full Name</Form.Label>
-              <Form.Control id='full-name' name='name' type='text' value={this.state.name} onChange={this.handleChange}></Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor='email'>Email</Form.Label>
-              <Form.Control id='email' name='email' type='email' value={this.state.email} onChange={this.handleChange}></Form.Control>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label htmlFor='message'>Message</Form.Label>
-              <Form.Control id='message' name='message' as='textarea' rows='3' value={this.state.message} onChange={this.handleChange}></Form.Control>
-            </Form.Group>
-            <Button className='d-inline-block' variant='primary' type='submit' disabled={this.state.disabled}>
-              Send
-            </Button>
+      <Content>
+        <Form onSubmit={e => handleSubmit(e)}>
+          <Form.Group>
+            <Form.Label htmlFor='full-name'>Full Name</Form.Label>
+            <Form.Control id='full-name' name='name' type='text' value={state.name} onChange={e => handleChange(e)}></Form.Control>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='email'>Email</Form.Label>
+            <Form.Control id='email' name='email' type='email' value={state.email} onChange={e => handleChange(e)}></Form.Control>
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor='message'>Message</Form.Label>
+            <Form.Control id='message' name='message' as='textarea' rows='3' value={state.message} onChange={e => handleChange(e)}></Form.Control>
+          </Form.Group>
+          <Button className='d-inline-block' variant='primary' type='submit' disabled={state.disabled}>
+            Send
+          </Button>
 
-            {this.state.emailSent === true && <p className='d-inline success-msg'>Email Sent</p>}
-            {this.state.emailSent === false && <p className='d-inline err-msg'>Email NOT Sent</p>}
-          </Form>
-        </Content>
-      </div>
-    );
-  }
+          {state.emailSent === true && <p className='d-inline success-msg'>Email Sent</p>}
+          {state.emailSent === false && <p className='d-inline err-msg'>Email NOT Sent</p>}
+        </Form>
+      </Content>
+    </div>
+  );
 }
-
-export default ContactPage;

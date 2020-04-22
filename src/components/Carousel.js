@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Card from './Card';
 
@@ -9,41 +9,38 @@ import CratesLogo from '../assets/images/Crates_Media_Logo.png';
 import AthamesLogo from '../assets/images/Athames_Banner.png';
 import Placeholder from '../assets/images/yikes.png';
 
-class Carousel extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      items: [
-        {
-          id: 0,
-          title: 'Crates Media',
-          subTitle: 'Independent Digital Services Agency',
-          imgSrc: CratesLogo,
-          link: 'http://crates.media',
-          selected: false
-        },
-        {
-          id: 1,
-          title: 'About Me',
-          subTitle: 'A bit more about who I am',
-          imgSrc: AthamesLogo,
-          link: '/about',
-          selected: false
-        },
-        {
-          id: 2,
-          title: 'More Projects...',
-          subTitle: 'See what else I\'ve built',
-          imgSrc: Placeholder,
-          link: 'https://github.com/ekg-91',
-          selected: false
-        }
-      ]
-    };
-  }
+export default function Carousel () {
+  const [state, setState] = useState({
+    items: [
+      {
+        id: 0,
+        title: 'Crates Media',
+        subTitle: 'Independent Digital Services Agency',
+        imgSrc: CratesLogo,
+        link: 'http://crates.media',
+        selected: false
+      },
+      {
+        id: 1,
+        title: 'About Me',
+        subTitle: 'A bit more about who I am',
+        imgSrc: AthamesLogo,
+        link: '/about',
+        selected: false
+      },
+      {
+        id: 2,
+        title: 'More Projects...',
+        subTitle: 'See what else I\'ve built',
+        imgSrc: Placeholder,
+        link: 'https://github.com/ekg-91',
+        selected: false
+      }
+    ]
+  });
 
-  handleCardClick = (id, card) => {
-    let items = [...this.state.items];
+  const handleCardClick = (id, card) => {
+    let items = [...state.items];
 
     items[id].selected = items[id].selected ? false : true;
 
@@ -53,26 +50,22 @@ class Carousel extends React.Component {
       }
     });
 
-    this.setState({
+    setState({
       items
     });
   }
 
-  makeItems = (items) => {
+  const makeItems = (items) => {
     return items.map(item => {
-      return <Card item={item} click={(e => this.handleCardClick(item.id, e))} key={item.id} />
+      return <Card item={item} click={(e => handleCardClick(item.id, e))} key={item.id} />
     });
   }
 
-  render () {
-    return (
-      <Container fluid={true}>
-        <Row className='justify-content-around'>
-          {this.makeItems(this.state.items)}
-        </Row>
-      </Container>
-    );
-  }
+  return (
+    <Container fluid={true}>
+      <Row className='justify-content-around'>
+        {makeItems(state.items)}
+      </Row>
+    </Container>
+  );
 }
-
-export default Carousel;
