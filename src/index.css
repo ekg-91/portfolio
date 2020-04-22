@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.p-card {
+  margin: 50px;
+}
+
 .c-card {
   margin: 20px;
 }
