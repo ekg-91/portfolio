@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+
 import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
@@ -19,8 +17,8 @@ export default function App () {
       { title: 'Contact', path: '/contact' }
     ],
     home: {
-      title: 'Be Inspired',
-      subTitle: 'Projects for a bright future',
+      title: 'Elegant Design',
+      subTitle: 'Performance Driven',
       text: 'Check out my work below'
     },
     projects: {
@@ -36,7 +34,7 @@ export default function App () {
 
   return (
     <Router>
-      <Container className='p-0' fluid>
+      {/* <Container className='p-0' fluid>
         <Navbar className='border-bottom' bg='transparent' expand='lg'>
           <Navbar.Brand>Elliot Gallagher</Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar-toggle' />
@@ -55,7 +53,7 @@ export default function App () {
         <Route path='/about' render={() => <AboutPage title={state.about.title} />} />
         <Route path='/contact' render={() => <ContactPage title={state.contact.title} />} />
         <Footer />
-      </Container>
+      </Container> */}
     </Router>
   );
 }

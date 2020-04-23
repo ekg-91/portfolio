@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import CardDeck from 'react-bootstrap/CardDeck';
+
 import ProjectCard from './ProjectCard';
 
 import ReactLogo from '../assets/images/react-logo.png';
@@ -59,19 +57,19 @@ export default function ProjectsGrid () {
     let incr = 0;
     const mappedRows = rows.map(row => {
       incr++;
-      return <Row key={incr}>
-        {row.map(item => <ProjectCard item={item} title={item.title} key={item.id} />)}
-      </Row>;
+      {/* return <Row key={incr}>
+              {row.map(item => <ProjectCard item={item} title={item.title} key={item.id} />)}
+            </Row>; */}
     });
 
     return mappedRows;
   }
 
   return (
-    <Container>
-      <CardDeck>
-        {makeItems(state.items)}
-      </CardDeck>
-    </Container>
+    {/* <Container>
+          <CardDeck>
+            {makeItems(state.items)}
+          </CardDeck>
+        </Container> */}
   );
 }

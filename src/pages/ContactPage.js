@@ -4,9 +4,6 @@ import axios from 'axios';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-
 export default function ContactPage (props) {
   const [state, setState] = useState({
     name: '',
@@ -60,7 +57,7 @@ export default function ContactPage (props) {
       <Hero title={props.title} />
 
       <Content>
-        <Form onSubmit={e => handleSubmit(e)}>
+        {/* <Form onSubmit={e => handleSubmit(e)}>
           <Form.Group>
             <Form.Label htmlFor='full-name'>Full Name</Form.Label>
             <Form.Control id='full-name' name='name' type='text' value={state.name} onChange={e => handleChange(e)}></Form.Control>
@@ -79,7 +76,7 @@ export default function ContactPage (props) {
 
           {state.emailSent === true && <p className='d-inline success-msg'>Email Sent</p>}
           {state.emailSent === false && <p className='d-inline err-msg'>Email NOT Sent</p>}
-        </Form>
+        </Form> */}
       </Content>
     </div>
   );

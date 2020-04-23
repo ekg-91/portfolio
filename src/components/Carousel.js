@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 
 import Card from './Card';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-
 import CratesLogo from '../assets/images/Crates_Media_Logo.png';
 import AthamesLogo from '../assets/images/Athames_Banner.png';
 import Placeholder from '../assets/images/yikes.png';
@@ -62,10 +59,10 @@ export default function Carousel () {
   }
 
   return (
-    <Container fluid={true}>
-      <Row className='justify-content-around'>
-        {makeItems(state.items)}
-      </Row>
-    </Container>
+    {/* <Container fluid={true}>
+          <Row className='justify-content-around'>
+            {makeItems(state.items)}
+          </Row>
+        </Container> */}
   );
 }
