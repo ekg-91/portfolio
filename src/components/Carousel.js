@@ -59,10 +59,11 @@ export default function Carousel () {
   }
 
   return (
+    <div>Carousel
     {/* <Container fluid={true}>
-          <Row className='justify-content-around'>
-            {makeItems(state.items)}
-          </Row>
-        </Container> */}
+            <Row className='justify-content-around'>
+              {makeItems(state.items)}
+            </Row>
+          </Container> */}</div>
   );
 }

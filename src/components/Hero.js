@@ -1,7 +1,8 @@
 import React from 'react';
 
-function Hero (props) {
+function Hero(props) {
   return (
+    <div>Hero
     {/* <Jumbotron className='bg-transparent jumbotron-fluid p-0'>
           <Container fluid='true'>
             <Row className='justify-content-center'>
@@ -13,6 +14,7 @@ function Hero (props) {
             </Row>
           </Container>
         </Jumbotron> */}
+    </div>
   );
 }
 

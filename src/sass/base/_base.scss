@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // this defines the 1rem unit for this project
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.app {
+  position: relative;
+}
