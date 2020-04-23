@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Footer from './components/Footer';
 
-import HomePage from './pages/HomePage';
-import ProjectsPage from './pages/ProjectsPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 export default function App () {
   const [state] = useState({
@@ -34,6 +34,7 @@ export default function App () {
 
   return (
     <Router>
+      <div>App works!</div>
       {/* <Container className='p-0' fluid>
         <Navbar className='border-bottom' bg='transparent' expand='lg'>
           <Navbar.Brand>Elliot Gallagher</Navbar.Brand>

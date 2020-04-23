@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 
-function AboutPage (props) {
+export default function About (props) {
   return (
     <div>
       <Hero title={props.title} />
@@ -18,5 +18,3 @@ function AboutPage (props) {
     </div>
   );
 }
-
-export default AboutPage;

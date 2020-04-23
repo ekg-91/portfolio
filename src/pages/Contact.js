@@ -4,7 +4,7 @@ import axios from 'axios';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 
-export default function ContactPage (props) {
+export default function Contact (props) {
   const [state, setState] = useState({
     name: '',
     email: '',
