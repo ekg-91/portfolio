@@ -4,14 +4,14 @@ import axios from 'axios';
 import Hero from '../components/Hero';
 import Content from '../components/Content';
 
-export default function Contact (props) {
+export default function Contact(props) {
   const [state, setState] = useState({
     name: '',
     email: '',
     message: '',
     disabled: false,
-    emailSent: null
-  })
+    emailSent: null,
+  });
 
   const handleChange = (event) => {
     const target = event.target;
@@ -19,38 +19,39 @@ export default function Contact (props) {
     const name = target.name;
 
     setState({
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     setState({
-      disabled: true
+      disabled: true,
     });
 
-    axios.post('http://localhost:3030/api/email', state)
-      .then(res => {
-        if(res.data.success){
+    axios
+      .post('http://localhost:3030/api/email', state)
+      .then((res) => {
+        if (res.data.success) {
           setState({
             disabled: false,
-            emailSent: true
+            emailSent: true,
           });
         } else {
           setState({
             disabled: false,
-            emailSent: false
+            emailSent: false,
           });
         }
       })
-      .catch(err => {
+      .catch((err) => {
         setState({
           disabled: false,
-          emailSent: false
-        })
-      })
-  }
+          emailSent: false,
+        });
+      });
+  };
 
   return (
     <div>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-function Footer () {
+function Footer() {
   return (
-    <footer className='footer'>
+    <footer className="footer">
       {/* <Container>
               <Row className='border-top justify-content-between p-3'>
                 <Col className='p-0' md={3} sm={12}>

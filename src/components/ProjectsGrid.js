@@ -4,7 +4,7 @@ import ProjectCard from './ProjectCard';
 
 import ReactLogo from '../assets/images/react-logo.png';
 
-export default function ProjectsGrid () {
+export default function ProjectsGrid() {
   const [state] = useState({
     items: [
       {
@@ -14,7 +14,7 @@ export default function ProjectsGrid () {
         imgSrc: ReactLogo,
         gitLink: '',
         demoLink: '/',
-        selected: false
+        selected: false,
       },
       {
         id: 1,
@@ -23,7 +23,7 @@ export default function ProjectsGrid () {
         imgSrc: ReactLogo,
         gitLink: '',
         demoLink: '/',
-        selected: false
+        selected: false,
       },
       {
         id: 2,
@@ -31,9 +31,9 @@ export default function ProjectsGrid () {
         description: 'This will say something about this project',
         imgSrc: ReactLogo,
         gitLink: '',
-        selected: false
-      }
-    ]
+        selected: false,
+      },
+    ],
   });
 
   const chunk = (items) => {
@@ -44,7 +44,7 @@ export default function ProjectsGrid () {
     }
 
     return chunked;
-  }
+  };
 
   const makeItems = (items) => {
     const gridItems = chunk(items);
@@ -55,21 +55,23 @@ export default function ProjectsGrid () {
     }
 
     let incr = 0;
-    const mappedRows = rows.map(row => {
+    const mappedRows = rows.map((row) => {
       incr++;
-      {/* return <Row key={incr}>
+      {
+        /* return <Row key={incr}>
               {row.map(item => <ProjectCard item={item} title={item.title} key={item.id} />)}
-            </Row>; */}
+            </Row>; */
+      }
     });
 
     return mappedRows;
-  }
+  };
 
-  return (
-    {/* <Container>
+  return {
+    /* <Container>
           <CardDeck>
             {makeItems(state.items)}
           </CardDeck>
-        </Container> */}
-  );
+        </Container> */
+  };
 }

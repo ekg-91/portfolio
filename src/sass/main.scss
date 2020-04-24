@@ -10,11 +10,13 @@
 @import "base/utilities";
 
 // COMPONENTS
+@import "components/hero";
 
 // LAYOUT
 // @import "layout/footer";
-// @import "layout/grid";
+@import "layout/grid";
 // @import "layout/header";
+@import "layout/logo";
 @import "layout/nav";
 
 // PAGES

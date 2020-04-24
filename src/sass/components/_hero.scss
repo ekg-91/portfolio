@@ -1,0 +1,63 @@
+.hero {
+  @include absCenter;
+  top: 60%;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+
+  &__card {
+    &, &:link, &:visited {
+      text-decoration: none;
+      display: inline-block;
+      margin: 6rem;
+      // position: relative;
+      height: 36rem;
+      width: 24rem;
+      background-color: $color-primary-light;
+      border-radius: 5px;
+      box-shadow: 0 1rem 2rem rgba($color-grey-dark-3, .6);
+      transition: all .3s;
+    }
+
+    &:hover {
+      transform: translateY(-.5rem);
+      box-shadow: 0 1.5rem 3rem rgba($color-grey-dark-3, .6);
+    }
+
+    &-0 {
+      background-image: url('../src/assets/images/Crates_Media_Logo.png');
+      background-size: cover;
+      height: 24rem;
+      // &::after {
+      //   background-color: $color-primary-light;
+      // }
+    }
+
+    &-1 {
+      background-image: url('../src/assets/images/react-logo.png');
+      background-size: cover;
+      height: 24rem;
+      // &::after {
+      //   background-color: $color-primary-grey;
+      // }
+    }
+
+    &-2 {
+      background-image: url('../src/assets/images/yikes.png');
+      background-size: cover;
+      height: 24rem;
+      // &::after {
+      //   background-color: $color-primary-dark;
+      // }
+    }
+  }
+
+  &__title {
+    color: $color-primary;
+  }
+
+  &__subtitle {
+    text-decoration: none;
+    color: $color-primary;
+  }
+}

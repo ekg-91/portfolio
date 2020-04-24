@@ -11,15 +11,24 @@ html {
 body {
   box-sizing: border-box; }
 
-.app {
-  position: relative; }
-
 body {
   font-family: Muli, sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
   color: #dbe9ee; }
+
+.heading-primary {
+  letter-spacing: 1.5px; }
+  .heading-primary--main {
+    font-size: 6rem; }
+  .heading-primary--sub {
+    font-size: 4rem;
+    border-bottom: 2px solid; }
+
+.heading-secondary {
+  margin: 1rem auto;
+  letter-spacing: 1.5px; }
 
 .u-center-text {
   text-align: center !important; }
@@ -45,6 +54,77 @@ body {
 .u-margin-top-small {
   margin-top: 1.5rem !important; }
 
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  width: 100%;
+  height: 50%;
+  text-align: center; }
+  .hero__card, .hero__card:link, .hero__card:visited {
+    text-decoration: none;
+    display: inline-block;
+    margin: 6rem;
+    height: 36rem;
+    width: 24rem;
+    background-color: #c0d6df;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.6);
+    transition: all .3s; }
+  .hero__card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.5rem 3rem rgba(51, 51, 51, 0.6); }
+  .hero__card-0 {
+    background-image: url("../src/assets/images/Crates_Media_Logo.png");
+    background-size: cover;
+    height: 24rem; }
+  .hero__card-1 {
+    background-image: url("../src/assets/images/react-logo.png");
+    background-size: cover;
+    height: 24rem; }
+  .hero__card-2 {
+    background-image: url("../src/assets/images/yikes.png");
+    background-size: cover;
+    height: 24rem; }
+  .hero__title {
+    color: #4a6fa5; }
+  .hero__subtitle {
+    text-decoration: none;
+    color: #4a6fa5; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem; }
+
 .nav {
   position: fixed;
   top: 1rem;
@@ -53,4 +133,12 @@ body {
 .home {
   height: 100vh;
   width: 100%;
-  background-color: #4a6fa5; }
+  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
+  background-size: cover; }
+  .home__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    text-align: center; }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Nav from './components/Nav';
@@ -9,25 +9,14 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
 
-export default function App () {
-  const [state] = useState({
-    projects: {
-      title: 'Projects'
-    },
-    about: {
-      title: 'About Me'
-    },
-    contact: {
-      title: 'Get in touch'
-    }
-  })
+export default function App() {
 
   return (
     <div className="app">
       <Router>
-        <div class="logo">Elliot Gallagher</div>
+        <div className="logo">Elliot Gallagher</div>
         <Nav />
-      
+
         <Route path="/" exact render={() => <Home />} />
         <Route path="/projects" render={() => <Projects />} />
         <Route path="/about" render={() => <About />} />

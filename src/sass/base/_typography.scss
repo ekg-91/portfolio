@@ -5,3 +5,19 @@ body {
   line-height: 1.7;
   color: $color-primary-extra-light;
 }
+
+.heading-primary {
+  letter-spacing: 1.5px;
+  &--main {
+    font-size: 6rem;
+  }
+  &--sub {
+    font-size: 4rem;
+    border-bottom: 2px solid;
+  }
+}
+
+.heading-secondary {
+  margin: 1rem auto;
+  letter-spacing: 1.5px;
+}
