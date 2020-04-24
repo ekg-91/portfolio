@@ -11,17 +11,6 @@ import Contact from './pages/Contact';
 
 export default function App () {
   const [state] = useState({
-    title: 'Elliot Gallagher',
-    headerLinks: [
-      { title: 'Home', path: '/' },
-      { title: 'About', path: '/about' },
-      { title: 'Contact', path: '/contact' }
-    ],
-    home: {
-      title: 'Elegant Design',
-      subTitle: 'Performance Driven',
-      text: 'Check out my work below'
-    },
     projects: {
       title: 'Projects'
     },
@@ -36,6 +25,7 @@ export default function App () {
   return (
     <div className="app">
       <Router>
+        <div class="logo">Elliot Gallagher</div>
         <Nav />
       
         <Route path="/" exact render={() => <Home />} />
@@ -44,10 +34,6 @@ export default function App () {
         <Route path="/contact" render={() => <Contact />} />
         <Footer />
         {/*
-                <div class="logo">Elliot Gallagher</div>
-        
-      
-      
          <Container className='p-0' fluid>
           <Navbar className='border-bottom' bg='transparent' expand='lg'>
             <Navbar.Brand>Elliot Gallagher</Navbar.Brand>
