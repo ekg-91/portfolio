@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "semistandard-react",
+    "prettier"
+  ],
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks",
+    "prettier",
+    "semistandard-react"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-console": 1,
+    "prettier/prettier": ["error", {"singleQuote": true}],
+    "prefer-const": 1
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
