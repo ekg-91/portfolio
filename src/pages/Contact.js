@@ -54,10 +54,8 @@ export default function Contact(props) {
   };
 
   return (
-    <div>
-      <Hero title={props.title} />
-
-      <Content>
+    <div className="contact">
+      Contact
         {/* <Form onSubmit={e => handleSubmit(e)}>
           <Form.Group>
             <Form.Label htmlFor='full-name'>Full Name</Form.Label>
@@ -78,7 +76,6 @@ export default function Contact(props) {
           {state.emailSent === true && <p className='d-inline success-msg'>Email Sent</p>}
           {state.emailSent === false && <p className='d-inline err-msg'>Email NOT Sent</p>}
         </Form> */}
-      </Content>
     </div>
   );
 }

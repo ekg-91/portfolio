@@ -23,10 +23,11 @@ export default function Hero() {
     <div className="hero">
       {heroItems.map(item => (
         <a className="hero__card" href={item.link}>
-          <div className={"hero__card-" + heroItems.indexOf(item)}>
+          <div className="hero__overlay">
+            <div className={"hero__card-" + heroItems.indexOf(item)} />
             <h2 className="hero__title">{item.title}</h2>
-            <h3 className="hero__subtitle">{item.subtitle}</h3>
           </div>
+          <h3 className="hero__subtitle">{item.subtitle}</h3>
         </a>
       ))}
     </div>

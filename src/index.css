@@ -59,14 +59,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 60%;
+  top: 65%;
   width: 100%;
-  height: 50%;
+  height: auto;
   text-align: center; }
   .hero__card, .hero__card:link, .hero__card:visited {
     text-decoration: none;
     display: inline-block;
     margin: 6rem;
+    position: relative;
     height: 36rem;
     width: 24rem;
     background-color: #c0d6df;
@@ -76,23 +77,43 @@ body {
   .hero__card:hover {
     transform: translateY(-0.5rem);
     box-shadow: 0 1.5rem 3rem rgba(51, 51, 51, 0.6); }
+    .hero__card:hover .hero__overlay {
+      filter: blur(3px) brightness(80%) contrast(50%); }
+    .hero__card:hover .hero__subtitle {
+      opacity: 1;
+      transform: translate(-6rem, -4rem); }
   .hero__card-0 {
     background-image: url("../src/assets/images/Crates_Media_Logo.png");
+    padding-top: 2rem;
     background-size: cover;
-    height: 24rem; }
+    height: 24rem;
+    margin-left: 11px; }
   .hero__card-1 {
-    background-image: url("../src/assets/images/react-logo.png");
+    background-image: url("../src/assets/images/yikes.png");
+    padding-top: 2rem;
     background-size: cover;
     height: 24rem; }
   .hero__card-2 {
-    background-image: url("../src/assets/images/yikes.png");
+    background-image: url("../src/assets/images/react-logo.png");
+    padding-top: 2rem;
     background-size: cover;
     height: 24rem; }
   .hero__title {
-    color: #4a6fa5; }
+    color: #4a6fa5;
+    padding-top: 2rem; }
   .hero__subtitle {
-    text-decoration: none;
-    color: #4a6fa5; }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    color: #dbe9ee;
+    opacity: 0;
+    transition: all .3s;
+    transform: translate(-6rem, 15rem);
+    z-index: 100; }
+  .hero__overlay {
+    height: 100%; }
 
 .row {
   max-width: 114rem;
@@ -130,12 +151,51 @@ body {
   top: 1rem;
   right: 1rem; }
 
+.about {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
+  background-size: cover; }
+  .about__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    text-align: center; }
+
+.contact {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
+  background-size: cover; }
+  .contact__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    text-align: center; }
+
 .home {
   height: 100vh;
   width: 100%;
   background-image: linear-gradient(to bottom, #4a6fa5, #166088);
   background-size: cover; }
   .home__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    text-align: center; }
+
+.projects {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
+  background-size: cover; }
+  .projects__heading {
     position: absolute;
     top: 50%;
     left: 50%;

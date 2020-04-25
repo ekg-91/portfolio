@@ -1,13 +1,14 @@
 import React from 'react';
 
-import Hero from '../components/Hero';
-import ProjectsGrid from '../components/ProjectsGrid';
-
 export default function Projects(props) {
   return (
-    <div>
-      <Hero title={props.title} />
-      <ProjectsGrid />
+    <div className="projects">
+      <div className="projects__heading">
+        <h1 className="heading-primary--main">Projects</h1>
+        <h3 className="heading-secondary">
+          More to come...
+        </h3>
+      </div>
     </div>
   );
 }
