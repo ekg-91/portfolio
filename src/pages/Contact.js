@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import Hero from '../components/Hero';
-import Content from '../components/Content';
-
 export default function Contact(props) {
   const [state, setState] = useState({
     name: '',
@@ -55,27 +52,37 @@ export default function Contact(props) {
 
   return (
     <div className="contact">
-      Contact
-        {/* <Form onSubmit={e => handleSubmit(e)}>
-          <Form.Group>
-            <Form.Label htmlFor='full-name'>Full Name</Form.Label>
-            <Form.Control id='full-name' name='name' type='text' value={state.name} onChange={e => handleChange(e)}></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor='email'>Email</Form.Label>
-            <Form.Control id='email' name='email' type='email' value={state.email} onChange={e => handleChange(e)}></Form.Control>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor='message'>Message</Form.Label>
-            <Form.Control id='message' name='message' as='textarea' rows='3' value={state.message} onChange={e => handleChange(e)}></Form.Control>
-          </Form.Group>
-          <Button className='d-inline-block' variant='primary' type='submit' disabled={state.disabled}>
-            Send
-          </Button>
+      <div className="contact__heading">
+        <h1 className="heading-primary--sub">Contact me</h1>
+      </div>
 
-          {state.emailSent === true && <p className='d-inline success-msg'>Email Sent</p>}
-          {state.emailSent === false && <p className='d-inline err-msg'>Email NOT Sent</p>}
-        </Form> */}
+      <div className="contact__form-box">
+        <form action="post" className="form" id="contact-form">
+          <div className="form__group">
+            <label htmlFor="name" className="form__label">Full Name</label>
+            <input type="text" className="form__input" id="name" placeholder="Full Name" required />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="email" className="form__label">Email Address</label>
+            <input type="email" className="form__input" id="email" placeholder="Email Address" required />
+          </div>
+
+          <div className="form__group">
+            <label htmlFor="phone" className="form__label">Phone Number</label>
+            <input type="phone" className="form__input" id="phone" placeholder="Phone Number" />
+          </div>
+
+          <div className="form__group form__group--message">
+            <label htmlFor="message" className="form__label">Message</label>
+            <textarea type="text" className="form__input form__input--message" id="message" placeholder="Message" required />
+          </div>
+
+          <div className="form__group">
+            <input type="submit" value="Send Message" className="form__submit" />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

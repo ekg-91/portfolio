@@ -9,7 +9,9 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
+  background-size: cover; }
 
 body {
   font-family: Muli, sans-serif;
@@ -19,6 +21,7 @@ body {
   color: #dbe9ee; }
 
 .heading-primary {
+  display: inline-block;
   letter-spacing: 1.5px; }
   .heading-primary--main {
     font-size: 6rem; }
@@ -27,8 +30,18 @@ body {
     border-bottom: 2px solid; }
 
 .heading-secondary {
+  display: inline-block;
+  width: auto;
   margin: 1rem auto;
   letter-spacing: 1.5px; }
+
+.heading-tertiary {
+  font-weight: 600; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
 
 .u-center-text {
   text-align: center !important; }
@@ -78,7 +91,8 @@ body {
     transform: translateY(-0.5rem);
     box-shadow: 0 1.5rem 3rem rgba(51, 51, 51, 0.6); }
     .hero__card:hover .hero__overlay {
-      filter: blur(3px) brightness(80%) contrast(50%); }
+      filter: blur(5px) brightness(80%);
+      background-color: rgba(22, 96, 136, 0.3); }
     .hero__card:hover .hero__subtitle {
       opacity: 1;
       transform: translate(-6rem, -4rem); }
@@ -100,7 +114,8 @@ body {
     height: 24rem; }
   .hero__title {
     color: #4a6fa5;
-    padding-top: 2rem; }
+    padding-top: 2rem;
+    display: inline-block; }
   .hero__subtitle {
     position: absolute;
     top: 50%;
@@ -149,20 +164,79 @@ body {
 .nav {
   position: fixed;
   top: 1rem;
-  right: 1rem; }
+  right: 1rem;
+  z-index: 10000; }
 
 .about {
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
-  background-size: cover; }
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 1px;
+  perspective-origin: 0 0; }
   .about__heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 20%;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
     text-align: center; }
+  .about__bio {
+    display: block;
+    height: 79vh;
+    padding-top: 15vh;
+    margin-bottom: 4rem;
+    transform-origin: 0 0;
+    transform: translateZ(-2px) scale(3); }
+  .about .bio__img {
+    display: inline-block;
+    height: 48rem;
+    background-image: url("./assets/images/yikes.png");
+    background-size: cover; }
+  .about .bio__content {
+    float: right; }
+  .about__cv {
+    display: block;
+    margin-top: 101vh;
+    margin-bottom: 53vh;
+    background-color: #dbe9ee;
+    color: #166088;
+    text-align: center;
+    transform-origin: 0 0;
+    transform: translateZ(-1px) scale(2); }
+  .about .cv__work {
+    padding-top: 4rem;
+    margin-bottom: 8rem; }
+  .about .cv__work-heading {
+    display: inline-block; }
+  .about .cv__work-group {
+    display: block;
+    margin-top: 4rem; }
+    .about .cv__work-group--label {
+      display: inline-block; }
+    .about .cv__work-group--title {
+      text-transform: uppercase;
+      font-size: 2.4rem; }
+    .about .cv__work-group--subtitle {
+      font-size: 1.8rem; }
+    .about .cv__work-group--details {
+      display: inline-block;
+      float: right;
+      text-align: left; }
+  .about .cv__skills {
+    margin-top: 4rem; }
+    .about .cv__skills-tech {
+      display: inline-block;
+      width: 74%;
+      margin-bottom: 4rem; }
+      .about .cv__skills-tech > ul li {
+        display: inline-block;
+        margin: 2rem; }
+    .about .cv__skills-comp {
+      margin-top: 2rem;
+      margin-bottom: 4rem; }
+      .about .cv__skills-comp ul div {
+        list-style: none; }
+        .about .cv__skills-comp ul div li {
+          margin-bottom: 1rem; }
 
 .contact {
   height: 100vh;
@@ -170,12 +244,75 @@ body {
   background-image: linear-gradient(to bottom, #4a6fa5, #166088);
   background-size: cover; }
   .contact__heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 20%;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
     text-align: center; }
+  .contact__form-box {
+    text-align: center;
+    margin: 6rem 10%;
+    padding: 4rem;
+    height: 48rem;
+    background-color: rgba(192, 214, 223, 0.4);
+    border-radius: 10px; }
+
+.form {
+  width: 100%; }
+  .form__group {
+    display: inline-block;
+    margin: 0 2rem; }
+    .form__group--message {
+      width: 90%;
+      margin-left: 0; }
+    .form__group:not(:last-child) {
+      margin-bottom: 2rem; }
+  .form__input {
+    width: 28rem;
+    height: 2.5rem;
+    border: none;
+    padding: 0 1rem;
+    transition: all .3s;
+    font-size: 1.6rem;
+    font-family: Muli, sans-serif;
+    color: rgba(22, 96, 136, 0.6); }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(22, 96, 136, 0.1); }
+    .form__input::placeholder {
+      font-size: 1.6rem;
+      font-family: Muli, sans-serif;
+      color: rgba(22, 96, 136, 0.6); }
+    .form__input--message {
+      max-height: 20rem;
+      min-width: 20rem;
+      height: 18rem;
+      width: 100%;
+      resize: none; }
+  .form__label {
+    display: block;
+    text-align: left;
+    padding-left: 1rem;
+    transition: all .3s; }
+    .form__label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-3rem); }
+  .form__submit {
+    height: 6rem;
+    width: 18rem;
+    background-color: #c0d6df;
+    box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.6);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1.8rem;
+    color: #4f6d7a;
+    transition: all .2s;
+    cursor: pointer; }
+    .form__submit:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.6); }
+  .form #name .form__group {
+    float: left; }
 
 .home {
   height: 100vh;
@@ -192,13 +329,11 @@ body {
 
 .projects {
   height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(to bottom, #4a6fa5, #166088);
-  background-size: cover; }
+  width: 100%; }
   .projects__heading {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    top: 20%;
+    top: 10%;
     text-align: center; }
