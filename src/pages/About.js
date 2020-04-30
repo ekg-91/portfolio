@@ -142,8 +142,20 @@ export default function About(props) {
           </div>
 
           <div className="row">
-            <div className="cv__school-item col-1-of-2">SBU</div>
-            <div className="cv__school-item col-1-of-2">CCCC</div>
+            <div className="cv__school-item col-1-of-2">
+              <div className="school-title">Stony Brook University</div>
+              <div className="school-desc">
+                Stony Brook, NY<br/>
+                2009-2010
+              </div>
+            </div>
+            <div className="cv__school-item col-1-of-2">
+              <div className="school-title">Cape Cod Community College</div>
+              <div className="school-desc">
+                Barnstable, MA<br/>
+                2010-2014
+              </div>
+            </div>
           </div>
         </div>
       </div>

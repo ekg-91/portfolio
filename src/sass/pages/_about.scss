@@ -28,8 +28,10 @@
     &__img {
       display: inline-block;
       height: 48rem;
-      background-image: url("./assets/images/yikes.png");
+      background-image: url("./assets/images/bio_img.jpg");
       background-size: cover;
+      border-radius: 5px;
+      border: 5px solid $color-primary-extra-light;
     }
 
     &__content {
@@ -41,7 +43,7 @@
   &__cv {
     display: block;
     margin-top: 101vh;
-    margin-bottom: 53vh;
+    margin-bottom: 59vh;
     background-color: $color-primary-extra-light;
     color: $color-primary-dark;
     text-align: center;
@@ -111,6 +113,20 @@
           }
         }
       }
+    }
+
+    &__school {
+      padding-bottom: 10rem;
+      &-item {
+        display: inline-block;
+      }
+
+      .school-title {
+        font-weight: 600;
+        font-size: 1.8rem;
+      }
+
+      .school-desc {}
     }
   }
 }
