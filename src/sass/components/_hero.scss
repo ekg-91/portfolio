@@ -33,6 +33,10 @@
         opacity: 1;
         transform: translate(-6rem, -4rem);
       }
+
+      & .hero__card-2 {
+        transform: scale(.8) rotate(1turn);
+      }
     }
 
     &-0 {
@@ -41,9 +45,6 @@
       background-size: cover;
       height: 24rem;
       margin-left: 11px;
-      // &::after {
-      //   background-color: $color-primary-light;
-      // }
     }
 
     &-1 {
@@ -51,26 +52,25 @@
       padding-top: 2rem;
       background-size: cover;
       height: 24rem;
-      // &::after {
-      //   background-color: $color-primary-grey;
-      // }
     }
 
     &-2 {
       background-image: url('../src/assets/images/react-logo.png');
+      background-position-y: 4px;
+      background-color: $color-primary-dark;
+      border-radius: 50%;
       padding-top: 2rem;
       background-size: cover;
       height: 24rem;
-      // &::after {
-      //   background-color: $color-primary-dark;
-      // }
+      transform: scale(.8);
+      transition: all 1s ease;
     }
   }
 
   &__title {
     color: $color-primary;
     padding-top: 2rem;
-    // border-bottom: 1px solid;
+    // border-bottom: 2px solid $color-primary;
     display: inline-block;
   }
 

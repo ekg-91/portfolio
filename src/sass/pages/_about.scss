@@ -97,7 +97,17 @@
 
         & > ul li {
           display: inline-block;
-          margin: 2rem;
+          margin: 2rem 1.5rem;
+          padding: 0 .5rem;
+          border-radius: 3px;
+          transition: all .3s;
+
+          &:hover {
+            box-shadow: -.3rem .3rem .6rem rgba($color-primary-dark, .3), .3rem -.3rem .8rem rgba($color-white, .6);
+            // box-shadow: 0 .5rem 1rem rgba($color-primary-dark, .4);
+            transform: scale(1.05);
+            cursor: pointer;
+          }
         }
       }
 

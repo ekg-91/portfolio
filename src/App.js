@@ -10,7 +10,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 
 export default function App() {
-
   return (
     <div className="app">
       <Router>

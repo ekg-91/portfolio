@@ -6,9 +6,7 @@ export default function Projects(props) {
       <div className="projects__heading">
         <h1 className="heading-primary--sub">Projects</h1>
       </div>
-      <div className="projects__grid">
-
-      </div>
+      <div className="projects__grid" />
     </div>
   );
 }
