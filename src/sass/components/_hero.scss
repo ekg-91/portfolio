@@ -31,7 +31,7 @@
 
       & .hero__subtitle {
         opacity: 1;
-        transform: translate(-6rem, -4rem);
+        transform: translate(-7rem, -4rem);
       }
 
       & .hero__card-2 {
@@ -48,7 +48,7 @@
     }
 
     &-1 {
-      background-image: url('../src/assets/images/yikes.png');
+      background-image: url('../src/assets/images/elliot.png');
       padding-top: 2rem;
       background-size: cover;
       height: 24rem;
@@ -69,8 +69,9 @@
 
   &__title {
     color: $color-primary;
-    padding-top: 2rem;
-    // border-bottom: 2px solid $color-primary;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid $color-primary;
     display: inline-block;
   }
 
@@ -78,9 +79,11 @@
     @include absCenter;
     top: 40%;
     color: $color-primary-extra-light;
+    font-size: 2.2rem;
+    width: 14rem;
     opacity: 0;
     transition: all .3s;
-    transform: translate(-6rem, 15rem);
+    transform: translate(-7rem, 15rem);
     z-index: 100;
   }
 

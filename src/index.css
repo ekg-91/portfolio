@@ -95,7 +95,7 @@ body {
       background-color: rgba(22, 96, 136, 0.3); }
     .hero__card:hover .hero__subtitle {
       opacity: 1;
-      transform: translate(-6rem, -4rem); }
+      transform: translate(-7rem, -4rem); }
     .hero__card:hover .hero__card-2 {
       transform: scale(0.8) rotate(1turn); }
   .hero__card-0 {
@@ -105,7 +105,7 @@ body {
     height: 24rem;
     margin-left: 11px; }
   .hero__card-1 {
-    background-image: url("../src/assets/images/yikes.png");
+    background-image: url("../src/assets/images/elliot.png");
     padding-top: 2rem;
     background-size: cover;
     height: 24rem; }
@@ -121,7 +121,9 @@ body {
     transition: all 1s ease; }
   .hero__title {
     color: #4a6fa5;
-    padding-top: 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #4a6fa5;
     display: inline-block; }
   .hero__subtitle {
     position: absolute;
@@ -130,9 +132,11 @@ body {
     transform: translate(-50%, -50%);
     top: 40%;
     color: #dbe9ee;
+    font-size: 2.2rem;
+    width: 14rem;
     opacity: 0;
     transition: all .3s;
-    transform: translate(-6rem, 15rem);
+    transform: translate(-7rem, 15rem);
     z-index: 100; }
   .hero__overlay {
     height: 100%; }
@@ -167,6 +171,9 @@ body {
   position: absolute;
   top: 1rem;
   left: 1rem; }
+  .logo a {
+    color: #dbe9ee;
+    text-decoration: none; }
 
 .nav__checkbox {
   display: none; }
@@ -394,7 +401,7 @@ body {
     margin: 6rem 10%;
     padding: 4rem;
     height: 48rem;
-    background-color: rgba(192, 214, 223, 0.4);
+    background-color: #c0d6df;
     border-radius: 10px; }
 
 .form {
@@ -413,22 +420,25 @@ body {
     border: none;
     padding: 0 1rem;
     transition: all .3s;
+    border-radius: 5px;
+    background-color: #c0d6df;
+    box-shadow: inset -0.5rem 0.5rem 1rem rgba(22, 96, 136, 0.3), inset 0.3rem -0.3rem 0.6rem rgba(255, 255, 255, 0.3);
     font-size: 1.6rem;
     font-family: Muli, sans-serif;
-    color: rgba(22, 96, 136, 0.6); }
+    color: #4a6fa5; }
     .form__input:focus {
-      outline: none;
-      box-shadow: 0 1rem 2rem rgba(22, 96, 136, 0.1); }
+      outline: none; }
     .form__input::placeholder {
       font-size: 1.6rem;
       font-family: Muli, sans-serif;
-      color: rgba(22, 96, 136, 0.6); }
+      color: #4a6fa5; }
     .form__input--message {
       max-height: 20rem;
       min-width: 20rem;
       height: 18rem;
       width: 100%;
-      resize: none; }
+      resize: none;
+      padding-top: .5rem; }
   .form__label {
     display: block;
     text-align: left;
@@ -442,16 +452,20 @@ body {
     height: 6rem;
     width: 18rem;
     background-color: #c0d6df;
-    box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.6);
+    border: none;
     border-radius: 5px;
     font-family: inherit;
     font-size: 1.8rem;
-    color: #4f6d7a;
+    color: #4a6fa5;
     transition: all .2s;
-    cursor: pointer; }
+    cursor: pointer;
+    box-shadow: -0.5rem 0.5rem 1rem rgba(22, 96, 136, 0.3), 0.5rem -0.5rem 1rem rgba(255, 255, 255, 0.3); }
     .form__submit:hover {
-      transform: translateY(-0.5rem);
-      box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.6); }
+      box-shadow: none; }
+    .form__submit:focus {
+      outline: none; }
+    .form__submit:active {
+      box-shadow: inset -0.5rem 0.5rem 1rem rgba(22, 96, 136, 0.3), inset 0.3rem -0.3rem 0.6rem rgba(255, 255, 255, 0.3); }
   .form #name .form__group {
     float: left; }
 

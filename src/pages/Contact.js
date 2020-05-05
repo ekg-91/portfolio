@@ -1,63 +1,63 @@
-import React from 'react'; // , { useState }
-// import axios from 'axios';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useForm } from 'react-hook-form/dist/react-hook-form.ie11';
 
 export default function Contact(props) {
-  // const [state, setState] = useState({
-  //   name: '',
-  //   email: '',
-  //   message: '',
-  //   disabled: false,
-  //   emailSent: null,
-  // });
+  // STATE
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    message: '',
+    disabled: false,
+    emailSent: null,
+  });
 
-  // const handleChange = (event) => {
-  //   const target = event.target;
-  //   const value = target.type === 'checkbox' ? target.checked : target.value;
-  //   const name = target.name;
+  const { register, handleSubmit } = useForm();
 
-  //   setState({
-  //     [name]: value,
-  //   });
-  // };
+  // METHODS
+  const onSubmit = (data) => {
+    setState({
+      disabled: true,
+    });
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
+    axios
+      .post('http://localhost:5000/api/email', data)
+      .then((res) => {
+        if (res.data.success) {
+          setState({
+            disabled: false,
+            emailSent: true,
+          });
+        } else {
+          setState({
+            disabled: false,
+            emailSent: false,
+          });
+        }
+      })
+      .catch((err) => {
+        setState({
+          disabled: false,
+          emailSent: false,
+          error: err,
+        });
+      });
+  };
 
-  //   setState({
-  //     disabled: true,
-  //   });
-
-  //   axios
-  //     .post('http://localhost:3030/api/email', state)
-  //     .then((res) => {
-  //       if (res.data.success) {
-  //         setState({
-  //           disabled: false,
-  //           emailSent: true,
-  //         });
-  //       } else {
-  //         setState({
-  //           disabled: false,
-  //           emailSent: false,
-  //         });
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       setState({
-  //         disabled: false,
-  //         emailSent: false,
-  //       });
-  //     });
-  // };
-
+  // RENDER
   return (
     <div className="contact">
       <div className="contact__heading">
-        <h1 className="heading-primary--sub">Contact me</h1>
+        <h1 className="heading-primary--sub">Contact Me</h1>
       </div>
 
       <div className="contact__form-box">
-        <form action="post" className="form" id="contact-form">
+        <form
+          action="post"
+          className="form"
+          id="contact-form"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="form__group">
             <label htmlFor="name" className="form__label">
               Full Name
@@ -66,7 +66,10 @@ export default function Contact(props) {
               type="text"
               className="form__input"
               id="name"
+              name="name"
               placeholder="Full Name"
+              disabled={state.disabled}
+              ref={register}
               required
             />
           </div>
@@ -79,7 +82,10 @@ export default function Contact(props) {
               type="email"
               className="form__input"
               id="email"
+              name="email"
               placeholder="Email Address"
+              disabled={state.disabled}
+              ref={register}
               required
             />
           </div>
@@ -92,7 +98,10 @@ export default function Contact(props) {
               type="phone"
               className="form__input"
               id="phone"
+              name="phone"
               placeholder="Phone Number"
+              disabled={state.disabled}
+              ref={register}
             />
           </div>
 
@@ -104,7 +113,10 @@ export default function Contact(props) {
               type="text"
               className="form__input form__input--message"
               id="message"
+              name="message"
               placeholder="Message"
+              disabled={state.disabled}
+              ref={register}
               required
             />
           </div>

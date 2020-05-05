@@ -13,7 +13,9 @@ export default function App() {
   return (
     <div className="app">
       <Router>
-        <div className="logo">Elliot Gallagher</div>
+        <div className="logo">
+          <a href="/">Elliot Gallagher</a>
+        </div>
         <Nav />
 
         <Route path="/" exact render={() => <Home />} />

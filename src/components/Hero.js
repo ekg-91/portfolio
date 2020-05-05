@@ -3,17 +3,17 @@ import React from 'react';
 export default function Hero() {
   const heroItems = [
     {
-      title: 'Contact me',
+      title: 'Contact Me',
       subtitle: "Let's get connected",
       link: '/contact',
     },
     {
-      title: 'About me',
+      title: 'About Me',
       subtitle: 'Bio & Resumé',
       link: '/about',
     },
     {
-      title: 'More projects...',
+      title: 'More Projects...',
       subtitle: "See what else I've built",
       link: '/projects',
     },
