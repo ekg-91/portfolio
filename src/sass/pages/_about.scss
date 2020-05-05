@@ -1,0 +1,142 @@
+.about {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 1px;
+  perspective-origin: 0 0;
+
+  &__heading {
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  // BIOGRAPHY SECTION STYLES
+  &__bio {
+    display: block;
+    height: 79vh;
+    padding-top: 15vh;
+    margin-bottom: 4rem;
+
+    transform-origin: 0 0;
+    transform: translateZ(-2px) scale(3);
+  }
+
+  .bio {
+    &__img {
+      display: inline-block;
+      height: 48rem;
+      background-image: url("./assets/images/bio_img.jpg");
+      background-size: cover;
+      border-radius: 5px;
+      border: 5px solid $color-primary-extra-light;
+    }
+
+    &__content {
+      float: right;
+    }
+  }
+
+  // CV SECTION STYLES
+  &__cv {
+    display: block;
+    margin-top: 101vh;
+    margin-bottom: 59vh;
+    background-color: $color-primary-extra-light;
+    color: $color-primary-dark;
+    text-align: center;
+    transform-origin: 0 0;
+    transform: translateZ(-1px) scale(2);
+  }
+
+  .cv {
+    // Work history
+    &__work {
+      padding-top: 4rem;
+      margin-bottom: 8rem;
+    }
+
+    &__work-heading {
+      display: inline-block;
+    }
+
+    &__work-group {
+      display: block;
+      margin-top: 4rem;
+
+      &--label {
+        display: inline-block;
+      }
+
+      &--title {
+        text-transform: uppercase;
+        font-size: 2.4rem;
+      }
+
+      &--subtitle {
+        font-size: 1.8rem;
+      }
+
+      &--details {
+        display: inline-block;
+        float: right;
+        text-align: left;
+      }
+    }
+
+    // Tech & Skills
+    &__skills {
+      margin-top: 4rem;
+
+      &-tech {
+        display: inline-block;
+        width: 74%;
+        margin-bottom: 4rem;
+
+        & > ul li {
+          display: inline-block;
+          margin: 2rem 1.5rem;
+          padding: 0 .5rem;
+          border-radius: 3px;
+          transition: all .3s;
+
+          &:hover {
+            box-shadow: -.3rem .3rem .6rem rgba($color-primary-dark, .3), .3rem -.3rem .8rem rgba($color-white, .6);
+            // box-shadow: 0 .5rem 1rem rgba($color-primary-dark, .4);
+            transform: scale(1.05);
+            cursor: pointer;
+          }
+        }
+      }
+
+      &-comp {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+
+        & ul div {
+          list-style: none;
+
+          & li {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    &__school {
+      padding-bottom: 10rem;
+      &-item {
+        display: inline-block;
+      }
+
+      .school-title {
+        font-weight: 600;
+        font-size: 1.8rem;
+      }
+
+      .school-desc {}
+    }
+  }
+}

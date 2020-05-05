@@ -1,68 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Nav from './components/Nav';
 import Footer from './components/Footer';
 
-import HomePage from './pages/HomePage';
-import ProjectsPage from './pages/ProjectsPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
-class App extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      title: 'Elliot Gallagher',
-      headerLinks: [
-        { title: 'Home', path: '/' },
-        { title: 'About', path: '/about' },
-        { title: 'Contact', path: '/contact' }
-      ],
-      home: {
-        title: 'Be Inspired',
-        subTitle: 'Projects for a bright future',
-        text: 'Check out my work below'
-      },
-      projects: {
-        title: 'Projects'
-      },
-      about: {
-        title: 'About Me'
-      },
-      contact: {
-        title: 'Get in touch'
-      }
-    };
-  }
-
-  render () {
-    return (
+export default function App() {
+  return (
+    <div className="app">
       <Router>
-        <Container className='p-0' fluid>
-          <Navbar className='border-bottom' bg='transparent' expand='lg'>
-            <Navbar.Brand>Elliot Gallagher</Navbar.Brand>
-            <Navbar.Toggle aria-controls='navbar-toggle' />
-            <Navbar.Collapse id='navbar-toggle'>
-              <Nav className='ml-auto'>
-                <Link className='nav-link' to='/'>Home</Link>
-                <Link className='nav-link' to='/projects'>Projects</Link>
-                <Link className='nav-link' to='/about'>About</Link>
-                <Link className='nav-link' to='/contact'>Contact</Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
+        <div className="logo">
+          <a href="/">Elliot Gallagher</a>
+        </div>
+        <Nav />
 
-          <Route path='/' exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} text={this.state.home.text} />} />
-          <Route path='/projects' render={() => <ProjectsPage title={this.state.projects.title} />} />
-          <Route path='/about' render={() => <AboutPage title={this.state.about.title} />} />
-          <Route path='/contact' render={() => <ContactPage title={this.state.contact.title} />} />
-          <Footer />
-        </Container>
+        <Route path="/" exact render={() => <Home />} />
+        <Route path="/projects" render={() => <Projects />} />
+        <Route path="/about" render={() => <About />} />
+        <Route path="/contact" render={() => <Contact />} />
+        <Footer />
       </Router>
-    );
-  }
+    </div>
+  );
 }
-
-export default App;

@@ -1,0 +1,38 @@
+body {
+  font-family: Muli, sans-serif;
+  font-weight: 400;
+  font-size: $default-font-size;
+  line-height: 1.7;
+  color: $color-primary-extra-light;
+}
+
+.heading-primary {
+  display: inline-block;
+  letter-spacing: 1.5px;
+  &--main {
+    font-size: 6rem;
+  }
+  &--sub {
+    font-size: 4rem;
+    border-bottom: 2px solid;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+  width: auto;
+  margin: 1rem auto;
+  letter-spacing: 1.5px;
+}
+
+.heading-tertiary {
+  font-weight: 600;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

@@ -1,23 +1,35 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-function Hero (props) {
+export default function Hero() {
+  const heroItems = [
+    {
+      title: 'Contact Me',
+      subtitle: "Let's get connected",
+      link: '/contact',
+    },
+    {
+      title: 'About Me',
+      subtitle: 'Bio & Resumé',
+      link: '/about',
+    },
+    {
+      title: 'More Projects...',
+      subtitle: "See what else I've built",
+      link: '/projects',
+    },
+  ];
+
   return (
-    <Jumbotron className='bg-transparent jumbotron-fluid p-0'>
-      <Container fluid='true'>
-        <Row className='justify-content-center'>
-          <Col md={8}>
-            {props.title && <h1 className='display-1 font-weight-bolder'>{props.title}</h1>}
-            {props.subTitle && <h3 className='display-4 font-weight-light'>{props.subTitle}</h3>}
-            {props.text && <h3 className='lead font-weight-light'>{props.text}</h3>}
-          </Col>
-        </Row>
-      </Container>
-    </Jumbotron>
+    <div className="hero">
+      {heroItems.map((item) => (
+        <a className="hero__card" key={item.title} href={item.link}>
+          <div className="hero__overlay">
+            <div className={'hero__card-' + heroItems.indexOf(item)} />
+            <h2 className="hero__title">{item.title}</h2>
+          </div>
+          <h3 className="hero__subtitle">{item.subtitle}</h3>
+        </a>
+      ))}
+    </div>
   );
 }
-
-export default Hero;

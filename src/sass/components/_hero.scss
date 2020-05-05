@@ -1,0 +1,93 @@
+.hero {
+  @include absCenter;
+  top: 65%;
+  width: 100%;
+  height: auto;
+  text-align: center;
+
+  &__card {
+    &, &:link, &:visited {
+      text-decoration: none;
+      display: inline-block;
+      margin: 6rem;
+      position: relative;
+      height: 36rem;
+      width: 24rem;
+      background-color: $color-primary-light;
+      border-radius: 5px;
+      box-shadow: 0 1rem 2rem rgba($color-grey-dark-3, .6);
+      transition: all .3s;
+    }
+
+    &:hover {
+      transform: translateY(-.5rem);
+      box-shadow: 0 1.5rem 3rem rgba($color-grey-dark-3, .6);
+      // filter: blur(3px) brightness(80%);
+
+      & .hero__overlay {
+        filter: blur(5px) brightness(80%);
+        background-color: rgba($color-primary-dark, .3);
+      }
+
+      & .hero__subtitle {
+        opacity: 1;
+        transform: translate(-7rem, -4rem);
+      }
+
+      & .hero__card-2 {
+        transform: scale(.8) rotate(1turn);
+      }
+    }
+
+    &-0 {
+      background-image: url('../src/assets/images/Crates_Media_Logo.png');
+      padding-top: 2rem;
+      background-size: cover;
+      height: 24rem;
+      margin-left: 11px;
+    }
+
+    &-1 {
+      background-image: url('../src/assets/images/elliot.png');
+      padding-top: 2rem;
+      background-size: cover;
+      height: 24rem;
+    }
+
+    &-2 {
+      background-image: url('../src/assets/images/react-logo.png');
+      background-position-y: 4px;
+      background-color: $color-primary-dark;
+      border-radius: 50%;
+      padding-top: 2rem;
+      background-size: cover;
+      height: 24rem;
+      transform: scale(.8);
+      transition: all 1s ease;
+    }
+  }
+
+  &__title {
+    color: $color-primary;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid $color-primary;
+    display: inline-block;
+  }
+
+  &__subtitle {
+    @include absCenter;
+    top: 40%;
+    color: $color-primary-extra-light;
+    font-size: 2.2rem;
+    width: 14rem;
+    opacity: 0;
+    transition: all .3s;
+    transform: translate(-7rem, 15rem);
+    z-index: 100;
+  }
+
+  &__overlay {
+    height: 100%;
+  }
+}
