@@ -11,10 +11,7 @@
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "react-spring": "^8.0.27",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-md5-hash": "0.0.6"
+    "react-spring": "^8.0.27"
   },
   "scripts": {
     "start": "webpack --mode production",
@@ -23,7 +20,8 @@
     "test": "react-scripts test",
     "compile:sass": "node-sass src/sass/main.scss src/index.css -w",
     "cy:open": "npx cypress open",
-    "api": "nodemon api/app.js"
+    "api": "nodemon api/app.js",
+    "heroku-prebuild": "npm install --dev"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -69,6 +67,9 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
-    "webpack-dev-server": "^3.10.3"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-md5-hash": "0.0.6"
   }
 }
