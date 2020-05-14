@@ -14,7 +14,8 @@
     "react-spring": "^8.0.27"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack --mode production",
+    "start:dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "test": "react-scripts test",
     "compile:sass": "node-sass src/sass/main.scss src/index.css -w",
