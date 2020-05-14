@@ -5,10 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const CopyPlugin = require('copy-webpack-plugin');
 const outputDir = '/public';
-const path = require('path');
 
 module.exports = {
-  devtool: 'cheap-source-map',
   module: {
     rules: [
       {
@@ -25,20 +23,19 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        // exclude: /node_modules/,
-        include: [
-          path.resolve(__dirname, 'node_modules/ansi-styles'),
-          path.resolve(__dirname, 'node_modules/react-hook-form'),
-          path.resolve(__dirname, 'node_modules/debug'),
-          path.resolve(__dirname, 'src'),
-        ],
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
         }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/,
@@ -49,17 +46,11 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
-      },
-      {
-        test: /\.(jpg|png|svg)$/,
-        use: {
-          loader: 'url-loader',
-        },
-      }      
+      }
     ]
   },
   output: {
-    path: __dirname + outputDir, // eslint-disable-line no-path-concat
+    path: __dirname + outputDir,
     publicPath: '/',
     filename: '[name].[hash].js'
   },
@@ -71,7 +62,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       hash: true,
       template: './src/index.html',
       filename: 'index.html'
@@ -81,7 +72,6 @@ module.exports = {
   devServer: {
     contentBase: '.' + outputDir,
     hot: true,
-    historyApiFallback: true,
     port: 3000
   }
 };
