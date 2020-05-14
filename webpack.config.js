@@ -34,7 +34,15 @@ module.exports = {
           'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader'
+          {
+           loader: `postcss-loader`,
+           options: {
+             options: {},
+             plugins: () => {
+               autoprefixer({ browsers: [ 'last 2 versions' ] });
+             }
+           }
+         }
         ]
       },
       {
@@ -43,7 +51,15 @@ module.exports = {
           'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader',
+          {
+           loader: `postcss-loader`,
+           options: {
+             options: {},
+             plugins: () => {
+               autoprefixer({ browsers: [ 'last 2 versions' ] });
+             }
+           }
+         },
           'sass-loader'
         ]
       }
