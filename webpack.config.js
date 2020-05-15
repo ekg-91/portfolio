@@ -4,10 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const CopyPlugin = require('copy-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const outputDir = '/public';
+const path = require('path');
 
 module.exports = {
+  devtool: 'cheap-source-map',
   module: {
     rules: [
       {
@@ -24,27 +25,20 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, 'node_modules/ansi-styles'),
+          path.resolve(__dirname, 'node_modules/react-hook-form'),
+          path.resolve(__dirname, 'node_modules/debug'),
+          path.resolve(__dirname, 'src'),
+        ],
         use: {
           loader: 'babel-loader'
         }
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-           loader: `postcss-loader`,
-           options: {
-             options: {},
-             plugins: () => {
-               autoprefixer({ browsers: [ 'last 2 versions' ] });
-             }
-           }
-         }
-        ]
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.s[ac]ss$/,
@@ -52,15 +46,7 @@ module.exports = {
           'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-           loader: `postcss-loader`,
-           options: {
-             options: {},
-             plugins: () => {
-               autoprefixer({ browsers: [ 'last 2 versions' ] });
-             }
-           }
-         },
+          'postcss-loader',
           'sass-loader'
         ]
       },
@@ -69,11 +55,11 @@ module.exports = {
         use: {
           loader: 'url-loader',
         },
-      }
+      }      
     ]
   },
   output: {
-    path: __dirname + outputDir,
+    path: __dirname + outputDir, // eslint-disable-line no-path-concat
     publicPath: '/',
     filename: '[name].[hash].js'
   },
@@ -85,7 +71,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       hash: true,
       template: './src/index.html',
       filename: 'index.html'
@@ -95,6 +81,7 @@ module.exports = {
   devServer: {
     contentBase: '.' + outputDir,
     hot: true,
+    historyApiFallback: true,
     port: 3000
   }
 };
