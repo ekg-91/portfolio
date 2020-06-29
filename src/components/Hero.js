@@ -20,15 +20,17 @@ export default function Hero() {
   ];
 
   return (
-    <div className="hero">
+    <div className="hero row">
       {heroItems.map((item) => (
-        <a className="hero__card" key={item.title} href={item.link}>
-          <div className="hero__overlay">
-            <div className={'hero__card-' + heroItems.indexOf(item)} />
-            <h2 className="hero__title">{item.title}</h2>
-          </div>
-          <h3 className="hero__subtitle">{item.subtitle}</h3>
-        </a>
+        <div className={'col-1-of-' + heroItems.length} key={item.title}>
+          <a className="hero__card" href={item.link}>
+            <div className="hero__overlay">
+              <div className={'hero__card-' + heroItems.indexOf(item)} />
+              <h2 className="hero__title">{item.title}</h2>
+            </div>
+            <h3 className="hero__subtitle">{item.subtitle}</h3>
+          </a>
+        </div>
       ))}
     </div>
   );

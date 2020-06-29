@@ -25,17 +25,26 @@
   width: 100%;
 
   &__group {
-    display: inline-block;
+    // display: inline-block;
     margin: 0 2rem;
+
+    &--credentials {
+      width: 90%;
+      text-align: justify;
+      text-align-last: justify;
+    }
 
     &--message {
       width: 90%;
-      margin-left: 0;
     }
 
     &:not(:last-child) {
       margin-bottom: 2rem;
     }
+  }
+
+  &__subgroup {
+    display: inline-block;
   }
 
   &__input {

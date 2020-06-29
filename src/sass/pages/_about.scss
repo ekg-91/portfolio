@@ -18,7 +18,11 @@
     display: block;
     height: 79vh;
     padding-top: 15vh;
-    margin-bottom: 4rem;
+    margin: 0 0 4rem 0;
+
+    @include respond (tab-land) {
+      margin: 0 4rem 4rem 4rem;
+    }
 
     transform-origin: 0 0;
     transform: translateZ(-2px) scale(3);
@@ -28,10 +32,26 @@
     &__img {
       display: inline-block;
       height: 48rem;
+      width: 100%;
       background-image: url("./assets/images/bio_img.jpg");
       background-size: cover;
       border-radius: 5px;
       border: 5px solid $color-primary-extra-light;
+
+      @include respond(tab-port) {
+        height: 36rem;
+        width: 50%;
+        background-size: cover;
+        background-position-y: center;
+        background-position-x: center;
+        position: relative;
+        left: 25%;
+      }
+
+      @include respond(phone) {
+        min-width: 25%;
+        height: 30rem;
+      }
     }
 
     &__content {

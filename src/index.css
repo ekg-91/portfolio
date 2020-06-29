@@ -7,11 +7,25 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
   background-image: linear-gradient(to bottom, #4a6fa5, #166088);
-  background-size: cover; }
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 body {
   font-family: Muli, sans-serif;
@@ -20,14 +34,20 @@ body {
   line-height: 1.7;
   color: #dbe9ee; }
 
-.heading-primary {
-  display: inline-block;
-  letter-spacing: 1.5px; }
-  .heading-primary--main {
-    font-size: 6rem; }
-  .heading-primary--sub {
-    font-size: 4rem;
-    border-bottom: 2px solid; }
+.heading-primary--main {
+  font-size: 6rem;
+  letter-spacing: .2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary--main {
+      letter-spacing: normal; } }
+
+.heading-primary--sub {
+  font-size: 4rem;
+  border-bottom: 2px solid;
+  letter-spacing: .2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-primary--sub {
+      letter-spacing: normal; } }
 
 .heading-secondary {
   display: inline-block;
@@ -36,7 +56,8 @@ body {
   letter-spacing: 1.5px; }
 
 .heading-tertiary {
-  font-weight: 600; }
+  font-weight: 600;
+  margin-bottom: 1rem; }
 
 .paragraph {
   font-size: 1.6rem; }
@@ -75,7 +96,8 @@ body {
   top: 65%;
   width: 100%;
   height: auto;
-  text-align: center; }
+  text-align: center;
+  display: block; }
   .hero__card, .hero__card:link, .hero__card:visited {
     text-decoration: none;
     display: inline-block;
@@ -154,6 +176,9 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -315,16 +340,33 @@ body {
     display: block;
     height: 79vh;
     padding-top: 15vh;
-    margin-bottom: 4rem;
+    margin: 0 0 4rem 0;
     transform-origin: 0 0;
     transform: translateZ(-2px) scale(3); }
+    @media only screen and (max-width: 75em) {
+      .about__bio {
+        margin: 0 4rem 4rem 4rem; } }
   .about .bio__img {
     display: inline-block;
     height: 48rem;
+    width: 100%;
     background-image: url("./assets/images/bio_img.jpg");
     background-size: cover;
     border-radius: 5px;
     border: 5px solid #dbe9ee; }
+    @media only screen and (max-width: 56.25em) {
+      .about .bio__img {
+        height: 36rem;
+        width: 50%;
+        background-size: cover;
+        background-position-y: center;
+        background-position-x: center;
+        position: relative;
+        left: 25%; } }
+    @media only screen and (max-width: 37.5em) {
+      .about .bio__img {
+        min-width: 25%;
+        height: 30rem; } }
   .about .bio__content {
     float: right; }
   .about__cv {
@@ -407,13 +449,17 @@ body {
 .form {
   width: 100%; }
   .form__group {
-    display: inline-block;
     margin: 0 2rem; }
-    .form__group--message {
+    .form__group--credentials {
       width: 90%;
-      margin-left: 0; }
+      text-align: justify;
+      text-align-last: justify; }
+    .form__group--message {
+      width: 90%; }
     .form__group:not(:last-child) {
       margin-bottom: 2rem; }
+  .form__subgroup {
+    display: inline-block; }
   .form__input {
     width: 28rem;
     height: 2.5rem;
@@ -480,7 +526,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     top: 20%;
-    text-align: center; }
+    text-align: center;
+    display: block; }
 
 .projects {
   height: 100vh;

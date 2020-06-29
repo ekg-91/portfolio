@@ -9,10 +9,28 @@
 html {
   // this defines the 1rem unit for this project
   font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+
+  @include respond(big) {
+    font-size: 75%;
+  }
 }
 
 body {
   box-sizing: border-box;
   background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark);
   background-size: cover;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
