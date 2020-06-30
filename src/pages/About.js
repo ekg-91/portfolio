@@ -15,39 +15,38 @@ export default function About(props) {
           <div className="col-2-of-3">
             <div className="bio__content">
               <p className="paragraph">
-                Hi I&apos;m Elliot. This is a sentence about me, but I&apos;m
-                going to add some filler content as well.
+                Hi there, I&apos;m Elliot Gallagher, a self-taught software
+                engineer, web architect, and UI/UX designer. I pride myself on
+                my ability to create engaging and highly performant digital
+                products, with white-glove service and pixel-perfect attention
+                to detail no matter the clientele.
               </p>
 
               <p className="paragraph">
-                My money&apos;s in that office, right? If she start giving me
-                some bullshit about it ain&apos;t there, and we got to go
-                someplace else and get it, I&apos;m gonna shoot you in the head
-                then and there. Then I&apos;m gonna shoot that bitch in the
-                kneecaps, find out where my goddamn money is. She gonna tell me
-                too. Hey, look at me when I&apos;m talking to you, motherfucker.
-                You listen: we go in there, and that nigga Winston or anybody
-                else is in there, you the first motherfucker to get shot. You
-                understand?
+                My academic background is in music, and it was through music
+                that I connected with Michael McDade, a brilliant engineer and a
+                dear friend, who encouraged me to teach myself how to code. With
+                his guidance, I learned the basics of front-end development
+                through online tutorials on FreeCodeCamp and YouTube, as well as
+                books like the YDKJS series by Kyle Simpson and xxx.
               </p>
 
               <p className="paragraph">
-                Do you see any Teletubbies in here? Do you see a slender plastic
-                tag clipped to my shirt with my name printed on it? Do you see a
-                little Asian child with a blank expression on his face sitting
-                outside on a mechanical helicopter that shakes when you put
-                quarters in it? No? Well, that&apos;s what you see at a toy
-                store. And you must think you&apos;re in a toy store, because
-                you&apos;re here shopping for an infant named Jeb.
+                I found the modular and compartmentalized nature of a React and
+                Redux tech stack to be very intuitive. I&apos;m always trying to
+                push the boundaries of my knowledge, and I quickly found myself
+                pushing even further by learning how to build out middleware
+                with GraphQL, servers with Node and Express, and databases with
+                PostgreSQL and MongoDB. I&apos;ve even begun learning to design
+                and wireframe sites using tools like Photoshop and Illustrator.
               </p>
 
               <p className="paragraph">
-                Well, the way they make shows is, they make one show. That
-                show&apos;s called a pilot. Then they show that show to the
-                people who make shows, and on the strength of that one show they
-                decide if they&apos;re going to make more shows. Some pilots get
-                picked and become television programs. Some don&apos;t, become
-                nothing. She starred in one of the ones that became nothing.
+                I continue to strive towards mastering every aspect of creating
+                incredible web products, from business needs and design, to
+                testing and development, to deployment and optimization. Check
+                the Projects section to see some examples of my work, or see the
+                Contact page if you want to get in touch about a project.
               </p>
             </div>
           </div>
