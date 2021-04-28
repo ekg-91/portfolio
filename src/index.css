@@ -163,6 +163,12 @@ body {
   .hero__overlay {
     height: 100%; }
 
+.project-card {
+  width: 36rem;
+  height: 24rem;
+  background-color: #fff;
+  margin: 5rem; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -539,3 +545,11 @@ body {
     transform: translate(-50%, -50%);
     top: 10%;
     text-align: center; }
+  .projects__grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }

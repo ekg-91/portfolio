@@ -1,7 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ProjectCard(props) {
-  return <div>Project Card</div>;
+export default function ProjectCard(props) {
+  return <div className="project-card">{props.title}</div>;
 }
 
-export default ProjectCard;
+ProjectCard.propTypes = {
+  title: PropTypes.string,
+};
