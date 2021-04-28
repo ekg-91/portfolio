@@ -32,13 +32,12 @@ export default function About(props) {
               </p>
 
               <p className="paragraph">
-                I found the modular and compartmentalized nature of a React and
-                Redux tech stack to be very intuitive. I&apos;m always trying to
-                push the boundaries of my knowledge, and I quickly found myself
-                pushing even further by learning how to build out middleware
-                with GraphQL, servers with Node and Express, and databases with
-                PostgreSQL and MongoDB. I&apos;ve even begun learning to design
-                and wireframe sites using tools like Photoshop and Illustrator.
+                I&apos;m always trying to push the boundaries of my knowledge,
+                and I quickly found myself pushing even further by learning how
+                to build out middleware with GraphQL, servers with Node and
+                Express, and databases with PostgreSQL and MongoDB. I&apos;ve
+                even begun learning to design and wireframe sites using tools
+                like Photoshop and Illustrator.
               </p>
 
               <p className="paragraph">
